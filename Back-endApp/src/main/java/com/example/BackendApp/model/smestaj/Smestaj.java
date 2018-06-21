@@ -3,9 +3,7 @@ package com.example.BackendApp.model.smestaj;
 public class Smestaj {
 
 	
-	private String drzava;
-	private String mesto;
-	private String ulica;
+	private String lokacija;
 	private String opis;
 	private int kapacitet;
 	private TipSmestaj tip;
@@ -26,24 +24,7 @@ public class Smestaj {
 	
 	
 	
-	public String getDrzava() {
-		return drzava;
-	}
-	public void setDrzava(String drzava) {
-		this.drzava = drzava;
-	}
-	public String getMesto() {
-		return mesto;
-	}
-	public void setMesto(String mesto) {
-		this.mesto = mesto;
-	}
-	public String getUlica() {
-		return ulica;
-	}
-	public void setUlica(String ulica) {
-		this.ulica = ulica;
-	}
+	
 	public String getOpis() {
 		return opis;
 	}
@@ -121,6 +102,12 @@ public class Smestaj {
 	}
 	public void setPrivatnoKupatilo(boolean privatnoKupatilo) {
 		this.privatnoKupatilo = privatnoKupatilo;
+	}
+	public String getLokacija() {
+		return lokacija;
+	}
+	public void setLokacija(String lokacija) {
+		this.lokacija = lokacija;
 	}
 	
 	
