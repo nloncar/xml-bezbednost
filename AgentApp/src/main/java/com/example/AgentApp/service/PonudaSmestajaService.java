@@ -1,6 +1,8 @@
 package com.example.AgentApp.service;
 
 
+import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -29,5 +31,10 @@ public class PonudaSmestajaService {
 	public void delete(PonudaSmestaja ps) {
 		
 		ponudaSmestajaRepository.delete(ps);
+	}
+	public List<PonudaSmestaja> getByCurrentDateAndSmestajId(Date start, Long idSmestaja) {
+		// TODO Auto-generated method stub
+		return ponudaSmestajaRepository.findByDatumOdGreaterThanAndSmestajIdOrderByDatumOdAsc(start, idSmestaja);
+
 	}
 }

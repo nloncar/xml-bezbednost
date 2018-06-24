@@ -1,6 +1,7 @@
 package com.example.AgentApp.dto;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.example.AgentApp.model.Kategorija;
 import com.example.AgentApp.model.TipSmestaj;
@@ -90,8 +91,8 @@ public class SmestajDTO {
 	public ArrayList<PonudaSmestajaDTO> getPonude() {
 		return ponude;
 	}
-	public void setPonude(ArrayList<PonudaSmestajaDTO> ponude) {
-		this.ponude = ponude;
+	public void setPonude(List<PonudaSmestajaDTO> ponude) {
+		this.ponude = (ArrayList<PonudaSmestajaDTO>) ponude;
 	}
 	public boolean isParking() {
 		return parking;
