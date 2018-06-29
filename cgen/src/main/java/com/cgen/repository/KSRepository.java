@@ -1,5 +1,6 @@
 package com.cgen.repository;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.security.KeyStore;
@@ -21,17 +22,24 @@ import com.cgen.certificate.IssuerData;
 public class KSRepository{
 
 	private KeyStore keyStore;
-	private final String keyStorepath = "./keystore.jks";
-	private final String keyStorePassword = "pass";
+	private final String keyStorepath = "./ks.jks";
+	private final String keyStorePassword = ""; 
 	
-	public KSRepository() {
-		try {
+	public KSRepository() { 
+		try {  
+			File f = new File(keyStorepath); 
 			keyStore = KeyStore.getInstance("JKS", "SUN");
-			keyStore.load(new FileInputStream(keyStorepath), keyStorePassword.toCharArray());
-		} catch (Exception e) {
+			if (f.exists()) {
+				keyStore.load(new FileInputStream(f), keyStorePassword.toCharArray());
+			}else {
+				keyStore.load(null,  keyStorePassword.toCharArray());
+				keyStore.store(new FileOutputStream(f), "".toCharArray());
+			}
+		} catch (Exception e) {  
 			e.printStackTrace();
+			
 		} 
-	}
+	} 
 	
 	public void saveCertificate(String alias, PrivateKey privateKey, Certificate certificate) throws Exception {
 		keyStore.setKeyEntry(alias, privateKey, keyStorePassword.toCharArray(), new Certificate[] {certificate});

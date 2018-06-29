@@ -44,21 +44,24 @@ public class UserController {
 	@PostMapping("register")
 	public void register(@Valid @RequestBody UserDTO userDTO) {
 		userService.registerUser(userDTO);
+		System.out.println("Registrovan korisnik");
+		 
 	}
 	
-	@PostMapping("logout")
+	@GetMapping("logout") 
 	public void logout(HttpServletRequest request) {
 		httpSession.invalidate(); 
-	}
+		System.out.println("Korisnik izlogovan");
+	} 
 	//provera da li je ulogovan
-	@GetMapping("/isLogged")
+	@GetMapping("/isLogged")   
 	public User isLoggedIn() {
 		User user = (User) httpSession.getAttribute("loggedUser");
 		if(user != null) {
 			return user;
 		}else {
-			return null;	
-		}
+			return null; 	 
+		} 
 	}
 	
 	

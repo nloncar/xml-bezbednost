@@ -30,8 +30,8 @@ public class User {
 	public User(){ 
 		
 	}
-	
-	public User(String username, UserType type, byte[] passwordHash, byte[] passwordSalt) {
+	 
+	public User(String username, UserType type,byte[] passwordSalt, byte[] passwordHash ) {
 		this.username = username;
 		this.passwordHash = passwordHash;
 		this.passwordSalt = passwordSalt;

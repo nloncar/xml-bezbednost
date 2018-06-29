@@ -33,9 +33,10 @@ import com.cgen.repository.KSRepository;
 public class CertificateService {
 	 
 	private final CertificateGenerator certificateGenerator; 
+	@Autowired
 	private final KSRepository repository; 
 	
-	
+	 
 	@Autowired
 	public CertificateService(CertificateGenerator certificateGenerator, KSRepository repository) {
 		this.certificateGenerator = certificateGenerator;
@@ -69,6 +70,7 @@ public class CertificateService {
 		
 			return new CertificateDTO(certificate);
 		} catch(Exception e) {
+			e.printStackTrace(); 
 			throw new RuntimeException();
 		}
 	}
