@@ -9,25 +9,25 @@
                           placeholder="Unesite ime"></p>
                 <p><input type="text"  ng-model="newUser.surname"
                           placeholder="Unesite prezime"></p>
-                <p><input type="text"  ng-model="newUser.jmbg" 
+                <p><input type="text"  ng-model="newUser.jmbg"
                           placeholder="Unesite jmbg"></p>
                 <p><input type="text"  ng-model="newUser.adresa"
                           placeholder="Unesite adresu"></p>
                 <p><input type="text"  ng-model="newUser.telefon"
-                          placeholder="Unesite telefon"></p>
-                          
+                          placeholder="Unesite telefon"></p>          
                 <p><input type="email"  ng-model="newUser.email" 
                           placeholder="Unesite email"></p>
-                <p><input id="pass1" type="password"  ng-model="newUser.password"
-                          placeholder="Unesite lozinku" ng-change="checkPassword()" ></p>
-                <p> 
-                <p><input id="pass2" type="password"  
+                <p><input type="password"  ng-model="newUser.password"
+                          placeholder="Unesite lozinku"></p>
+                <p>
+                <p><input type="password"  
                           placeholder="Ponovite lozinku" ng-model="repeatedPassword"></p>
-                               <p>
+                <p>
+                <p><input type="text"  ng-model="ps" placeholder="Jacina sifre" ></p> 
                     <button type="submit"  ng-click="registerUser(newUser)">Registruj se</button> 
-                </p> 
-                </br> 
-            </form> 
+                </p>
+                </br>
+            </form>
         </div>
     </div>
 </div>
