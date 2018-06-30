@@ -83,7 +83,7 @@ public class UserController {
         }
     }
     
-
+ 
     @RequestMapping(value = "/logout",
 			method = RequestMethod.GET,
 			consumes = MediaType.APPLICATION_JSON_VALUE)
